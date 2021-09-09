@@ -55,10 +55,13 @@ class LinkedList:
         return node.value
 
     def __str__(self) -> str:
-        return f"{[node for node in self]}"
+        return f"{[value for value in self]}"
 
 
 if __name__ == '__main__':
     list_ = [1, 2, 3]
     linked_list = LinkedList(list_)
-    print(linked_list)
+
+    output = sorted(linked_list, reverse=False)
+    print(output)
+    # print(linked_list)
