@@ -8,7 +8,7 @@ class LinkedList:
         """Конструктор связного списка"""
         self.len = 0
         self.head: Optional[Node] = None
-        ...  # TODO добавить атрибут tail
+        self.tail = self.head
 
         if data is not None:
             for value in data:

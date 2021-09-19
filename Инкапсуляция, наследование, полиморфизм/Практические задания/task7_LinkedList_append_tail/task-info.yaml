@@ -4,16 +4,16 @@ files:
   visible: true
   placeholders:
   - offset: 245
-    length: 33
+    length: 21
     placeholder_text: '...  # TODO добавить атрибут tail'
     initial_state:
       length: 33
       offset: 245
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: self.tail = self.head
-  - offset: 610
+  - offset: 598
     length: 181
     placeholder_text: |-
       last_index = self.len - 1  # TODO Переделать через атрибут tail
@@ -25,11 +25,11 @@ files:
       offset: 610
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Failed
     encrypted_possible_answer: |-
       self.linked_nodes(self.tail, append_node)
                   self.tail = append_node
-  - offset: 1555
+  - offset: 1543
     length: 89
     placeholder_text: 'left_node.set_next(right_node)  # TODO next теперь свойство
       имеет setter, используйте это'
@@ -38,7 +38,7 @@ files:
       offset: 1555
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Failed
     encrypted_possible_answer: left_node.next = right_node
   text: |
     from typing import Any, Iterable, Optional
@@ -170,5 +170,12 @@ files:
             self.is_valid(next_)
             self._next = next_
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Incorrect
+  time: Thu, 16 Sep 2021 16:48:18 UTC
+  expected: |
+    [1, 2, 3]
+    [1, 2, 3, 100]
+  actual: <no output>
 record: -1

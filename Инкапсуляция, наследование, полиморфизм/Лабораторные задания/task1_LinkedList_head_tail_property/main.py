@@ -69,7 +69,7 @@ class LinkedList:
     def __str__(self) -> str:
         return f"{self.to_list()}"
 
-    # TODO реализовать getter и setter для head
+    #getter и setter для head
 
     # TODO реализовать getter и setter для tail
 

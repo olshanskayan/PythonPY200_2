@@ -17,7 +17,7 @@ files:
       offset: 122
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: |-
       self.capacity_volume = None
               self.init_capacity_volume(capacity_volume)
@@ -30,7 +30,7 @@ files:
       offset: 587
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: |2-
           def init_capacity_volume(self, capacity_volume: [int, float]):
               if not isinstance(capacity_volume, (int, float)):
@@ -47,8 +47,8 @@ files:
       length: 121
       offset: 698
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |
       glass = Glass(200, 100)  # экземпляр класса
           print(glass.capacity_volume, glass.occupied_volume)
@@ -79,6 +79,6 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1
 post_submission_on_open: true
