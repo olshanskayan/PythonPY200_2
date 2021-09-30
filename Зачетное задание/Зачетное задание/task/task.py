@@ -33,47 +33,33 @@ class Node:
         self._next = next_
 
 class DoubleLinkedNode(Node):
-    def __init__(self):
-        super().__init__(self)
+    def __init__(self, value, next_, prev_: Optional["Node"] = None):
+        super().__init__(value, next_)
 
-        self.len = 0
-        self.head: Optional[Node] = None
+        self.prev = prev_
 
-        self.prev = Node.next
-
-    def step_by_step_on_nodes(self, index: int) -> Node:
-        """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
-
-        if not isinstance(index, int):
-            raise TypeError()
-
-        if not 0 <= index < self.len:  # для for
-            raise IndexError()
-
-        current_node = self.head
-        for _ in range(index):
-            current_node = current_node.next
-
-        return current_node
-
-    @property
-    def prev(self):
-        return self.prev
-
-    @prev.setter
-    def prev(self, next_: Optional["Node"]):
-        self.is_valid(next_) #проверять валидность текущего узла или предыдущего???
-        self.prev = self.step_by_step_on_nodes(self.len - 1)
-
-
+    # @property
+    # def prev(self):
+    #     return self.prev
+    #
+    # @prev.setter
+    # def prev(self, prev_: Optional["Node"]):
+    #     self.is_valid(prev_)
+    #     self.prev = prev_
 
 if __name__ == "__main__":
     # list_ = [1, 2, 3]
-    # linked_list = DoubleLinkedNode()
+    # linked_list = DoubleLinkedNode(, None)
     # print(linked_list)
 
-    first_node = Node("Hello!")
-    print(first_node)
+    # first_node = Node("Hello, ")
+    # print(first_node)
 
-    second_node = DoubleLinkedNode()
+    first_node = DoubleLinkedNode("Hello,", None)
+    third_node = DoubleLinkedNode("World!", None, None)
+    second_node = DoubleLinkedNode("My", third_node, first_node)
+
     print(first_node)
+    print(second_node)
+    print(third_node)
+    print(second_node.prev, second_node, second_node.next)
