@@ -1,5 +1,4 @@
-from typing import Any, Optional
-
+from typing import Any, Iterable, Optional
 
 class Node:
     """ Класс, который описывает узел связного списка. """
@@ -31,23 +30,3 @@ class Node:
     def next(self, next_: Optional["Node"]):
         self.is_valid(next_)
         self._next = next_
-
-class DoubleLinkedNode(Node):
-    def __init__(self, value, next_, prev_: Optional["Node"] = None):
-        super().__init__(value, next_)
-
-        self.prev = prev_
-    def __repr__(self) -> str:
-        next_prev = None if self.prev is None else f"DoubleLinkedNode({self.prev})"
-        next_repr = None if self.next is None else f"DoubleLinkedNode({self.next})"
-        return f"DoubleLinkedNode({self.value}, {next_prev}, {next_repr})"
-
-    @property
-    def prev(self):
-        return self._prev
-
-    @prev.setter
-    def prev(self, prev_: Optional["Node"]):
-        self.is_valid(prev_)
-        self._prev = prev_
-

@@ -4,13 +4,13 @@ files:
   visible: true
   placeholders:
   - offset: 948
-    length: 41
+    length: 620
     placeholder_text: '# TODO реализовать класс DoubleLinkedNode'
     initial_state:
       length: 41
       offset: 948
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: '# TODO'
   text: |
