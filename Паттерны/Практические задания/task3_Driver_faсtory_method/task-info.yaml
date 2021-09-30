@@ -91,5 +91,9 @@ files:
         read_data = driver.read()
         print(read_data)
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Incorrect
+  time: Thu, 23 Sep 2021 16:58:17 UTC
+  actual: 'Введите название текстового файла: (.txt)'
 record: -1

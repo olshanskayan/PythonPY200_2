@@ -32,4 +32,6 @@ class Node:
         self.is_valid(next_)
         self._next = next_
 
-    # TODO переоределить метод __del__
+    #переопределить метод __del__
+    def __del__(self):
+        print("Узел удален")

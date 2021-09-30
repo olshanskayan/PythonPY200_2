@@ -66,9 +66,15 @@ class LinkedList:
         node.value = value
 
     def __delitem__(self, index: int):
-        ...  # TODO проверка индекса
+        #проверка индекса
+        if not 0 < index < self.len:
+            raise IndexError
 
-        ...  # TODO алгоритм удаления
+        #алгоритм удаления
+        left_node = self.step_by_step_on_nodes(index - 1)
+        right_node = self.step_by_step_on_nodes(index + 1)
+        self.linked_nodes(left_node, right_node)
+        self.len -= 1 #изменем счетчик, чтобы печать шла корректно
 
     def to_list(self) -> list:
         return [linked_list_value for linked_list_value in self]
@@ -87,9 +93,9 @@ if __name__ == '__main__':
 
     del linked_list[1]
     print(linked_list)
-
-    del linked_list[1]
-    print(linked_list)
-
-    del linked_list[0]
-    print(linked_list)
+    #
+    # del linked_list[1]
+    # print(linked_list)
+    #
+    # del linked_list[0]
+    # print(linked_list)
