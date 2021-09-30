@@ -43,26 +43,26 @@ class DoubleLinkedNode(Node):
     def __str__(self) -> str:
         return str(self.value)
 
+    @property
+    def prev(self):
+        return self.prev
 
-    # @property
-    # def prev(self):
-    #     return self.prev
-    #
-    # @prev.setter
-    # def prev(self, prev_: Optional["Node"]):
-    #     self.is_valid(prev_)
-    #     self.prev = prev_
-
+    @prev.setter
+    def prev(self, prev_: Optional["Node"]):
+        Node.is_valid(prev_)
+        # self.prev = prev_
 if __name__ == "__main__":
 
     first_node = DoubleLinkedNode("Hello,", None)
     third_node = DoubleLinkedNode("World!", None, None)
     second_node = DoubleLinkedNode("My", third_node, first_node)
 
-    print(first_node)
-    print(second_node)
-    print(third_node)
-    print(second_node.prev, second_node, second_node.next)
+    # print(first_node)
+    # print(second_node)
+    # print(third_node)
+    # print(second_node.prev, second_node, second_node.next)
 
-    print(second_node.__str__())
-    print(second_node.__repr__())
+    print(second_node, second_node.prev)
+
+    # print(second_node.__str__())
+    # print(second_node.__repr__())
