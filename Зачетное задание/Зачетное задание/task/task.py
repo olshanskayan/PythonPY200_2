@@ -10,7 +10,7 @@ class Node:
         :param next_: следующий узел, если он есть
         """
         self.value = value
-        self.next = next_  # вызовется setter
+        self.__next = next_  # вызовется setter
 
     def __repr__(self) -> str:
         return f"Node({self.value}, {None})" if self.next is None else f"Node({self.value}, Node({self.next}))"
@@ -25,18 +25,24 @@ class Node:
 
     @property
     def next(self):
-        return self._next
+        return self.__next
 
     @next.setter
     def next(self, next_: Optional["Node"]):
         self.is_valid(next_)
-        self._next = next_
+        self.__next = next_
 
 class DoubleLinkedNode(Node):
     def __init__(self, value, next_, prev_: Optional["Node"] = None):
         super().__init__(value, next_)
 
         self.prev = prev_
+    def __repr__(self) -> str:
+        return f"Node({self.value}, {None})" if self.next is None else f"Node({self.value}, Node({self.next}))"
+
+    def __str__(self) -> str:
+        return str(self.value)
+
 
     # @property
     # def prev(self):
@@ -48,12 +54,6 @@ class DoubleLinkedNode(Node):
     #     self.prev = prev_
 
 if __name__ == "__main__":
-    # list_ = [1, 2, 3]
-    # linked_list = DoubleLinkedNode(, None)
-    # print(linked_list)
-
-    # first_node = Node("Hello, ")
-    # print(first_node)
 
     first_node = DoubleLinkedNode("Hello,", None)
     third_node = DoubleLinkedNode("World!", None, None)
@@ -63,3 +63,6 @@ if __name__ == "__main__":
     print(second_node)
     print(third_node)
     print(second_node.prev, second_node, second_node.next)
+
+    print(second_node.__str__())
+    print(second_node.__repr__())
